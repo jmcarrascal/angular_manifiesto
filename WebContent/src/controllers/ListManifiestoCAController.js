@@ -31,7 +31,8 @@ function ListManifiestoCAController($scope, $http, serviceShare) {
 			"mData" : function (oObj)                              
                   {
                       // call Modal
-                      var a = "<div class='btn-group'><button class='btn glow'>Accion</button> <button data-toggle='dropdown' class='btn glow dropdown-toggle'><span class='caret'></span></button><ul class='dropdown-menu'><li><a  onclick=\"editManifiesto('1')\"');\"><i class='icon-pencil'></i> Editar</a></li><li><a href='http://54.232.16.128:8080/FormRender/formulario/display.xhtml?id=C1.1&repeat=1' target='_blank'><i class='icon-desktop'></i> Adicionar Items</a></li></ul></div>";                            
+					  console.log(oObj.id);
+                      var a = "<div class='btn-group'><button class='btn glow'>Accion</button> <button data-toggle='dropdown' class='btn glow dropdown-toggle'><span class='caret'></span></button><ul class='dropdown-menu'><li><a  onclick=\"editManifiesto('" + oObj.id  +"');\"><i class='icon-pencil'></i> Editar</a></li><li><a href='http://54.232.16.128:8080/FormRender/formulario/display.xhtml?id=C1.1&repeat=1' target='_blank'><i class='icon-desktop'></i> Adicionar Items</a></li></ul></div>";                            
                       return a;
                   }
                   }
@@ -41,6 +42,7 @@ function ListManifiestoCAController($scope, $http, serviceShare) {
 }
 
 function editManifiesto(idManifiesto){
+	console.log(idManifiesto);
 	window.location = "#/manifiestoCAEdit/" + idManifiesto;
 }
 

@@ -35,8 +35,8 @@ function EditManifiestoCAController($scope, $http, serviceShare,$routeParams) {
 				$scope.placaList = result;
 			});
 	      
-	      $('#newManifiestoForm').submit(function(e) {
-	        $.post(serviceShare.user.url_service + "/manifiesto/new", $(this).serialize(), function(response) {
+	      $('#editManifiestoForm').submit(function(e) {
+	        $.post(serviceShare.user.url_service + "/manifiesto/edit", $(this).serialize(), function(response) {
 	        	console.log(response);	        								
 				window.location = "#/getManifiestoCAAll";
 								
