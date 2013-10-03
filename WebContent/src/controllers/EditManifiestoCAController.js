@@ -15,6 +15,9 @@ function EditManifiestoCAController($scope, $http, serviceShare,$routeParams) {
             url: serviceShare.user.url_service + '/manifiestobykey/' +  id           
 			}).success(function (result) {
 				$scope.manifiestoCA = result;
+				$scope.selectedPlaca = result.placa.id;
+				$scope.selectedAduanaPartida = result.aduanaPartida.id;
+				$scope.selectedAduanaDestino = result.aduanaDestino.id;
 			});
 
 		

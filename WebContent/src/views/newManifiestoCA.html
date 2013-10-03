@@ -55,7 +55,6 @@
             <div class="content-wrap">
                 <h6>Nuevo Manifesto</h6>
                 <form id="newManifiestoForm">
-                	
 	                <input type="hidden" value="{{selectedAduanaPartida}}" name = "aduanaPartida.id">
 	                <input type="hidden" value="{{selectedAduanaDestino}}" name = "aduanaDestino.id">
 	                <input type="hidden" value="{{selectedPlaca}}" name = "placa.id">
@@ -65,13 +64,13 @@
 		      	    <p>Selecione Aduana de Destino</p>
 		      	    <select  class="span12" ng-model="selectedAduanaDestino" ng-options="item.id as item.descripcion for item in aduanaList">
 		      	    </select>
-		      	    <input class="span12" type="number" placeholder="Cantidad de Bultos" name="cantidadBultos" value="{{manifiestoCA.cantidadBultos}}">
-		      	    <input class="span12" type="text"  id ="fechaLlegada" name = "formatFechaLlegada" value="{{manifiestoCA.formatFechaLlegada}}">
-		      	    <input class="span12" type="text"  id ="fechaPartida" name = "formatFechaPartida" value="{{manifiestoCA.formatFechaPartida}}">    			
-		      	    <input class="span12" type="text" placeholder="Numero de Viaje" name="numeroViaje" value="{{manifiestoCA.numeroViaje}}">
-		      	    <input class="span12" type="text" placeholder="Peso" name="peso" value="{{manifiestoCA.peso}}">									
+		      	    <input class="span12" type="number" placeholder="Cantidad de Bultos" name="cantidadBultos">
+		      	    <input class="span12" type="text"  id ="fechaLlegada" name = "formatFechaLlegada">
+		      	    <input class="span12" type="text"  id ="fechaPartida" name = "formatFechaPartida">    			
+		      	    <input class="span12" type="text" placeholder="Numero de Viaje" name="numeroViaje">
+		      	    <input class="span12" type="text" placeholder="Peso" name="peso">									
 		      	    <p>Selecione Placa</p>
-		      	    <select  class="span12" ng-model="selectedPlaca" ng-options="item.id as item.codigo for item in placaList" > 
+		      	    <select  class="span12" ng-model="selectedPlaca" ng-options="item.id as item.codigo for item in placaList">
 		      	    </select>
 
         	        <input class="span12" type="submit" value="Guardar" />
