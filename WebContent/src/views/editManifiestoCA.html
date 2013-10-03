@@ -1,0 +1,85 @@
+<html class="Aduana">
+<head>
+	
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	
+	
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet">
+	
+	
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/elements.css">
+    <link rel="stylesheet" type="text/css" href="css/icons.css">
+
+    <!-- libraries -->
+    <link rel="stylesheet" type="text/css" href="src/css/lib/font-awesome.css">
+    
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="src/css/compiled/signin.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+   <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+       <style>
+    	.Aduana {
+	background: url("src/img/bgs/aduana.jpg") no-repeat center center fixed;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='src/img/bgs/aduana.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='src/img/bgs/aduana.jpg', sizingMethod='scale')";
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+    </style>
+</head>
+<body>
+
+
+    <!-- background switcher -->
+  
+
+    <div class="row-fluid login-wrapper">
+        <a href="index.html">
+            <img class="logo" src="src/img/AduanaBolivia.gif" width="10%">
+        </a>
+
+        <div class="span4 box">
+            <div class="content-wrap">
+                <h6>Nuevo Manifesto</h6>
+                <form id="newManifiestoForm">
+                	
+	                <input type="hidden" value="{{selectedAduanaPartida}}" name = "aduanaPartida.id">
+	                <input type="hidden" value="{{selectedAduanaDestino}}" name = "aduanaDestino.id">
+	                <input type="hidden" value="{{selectedPlaca}}" name = "placa.id">
+		      	    <p>Selecione Aduana de Partida</p>
+		      	    <select  class="span12" ng-model="selectedAduanaPartida" ng-options="item.id as item.descripcion for item in aduanaList">
+		      	    </select>
+		      	    <p>Selecione Aduana de Destino</p>
+		      	    <select  class="span12" ng-model="selectedAduanaDestino" ng-options="item.id as item.descripcion for item in aduanaList">
+		      	    </select>
+		      	    <input class="span12" type="number" placeholder="Cantidad de Bultos" name="cantidadBultos" value="{{manifiestoCA.cantidadBultos}}">
+		      	    <input class="span12" type="text"  id ="fechaLlegada" name = "formatFechaLlegada" value="{{manifiestoCA.formatFechaLlegada}}">
+		      	    <input class="span12" type="text"  id ="fechaPartida" name = "formatFechaPartida" value="{{manifiestoCA.formatFechaPartida}}">    			
+		      	    <input class="span12" type="text" placeholder="Numero de Viaje" name="numeroViaje" value="{{manifiestoCA.numeroViaje}}">
+		      	    <input class="span12" type="text" placeholder="Peso" name="peso" value="{{manifiestoCA.peso}}">									
+		      	    <p>Selecione Placa</p>
+		      	    <select  class="span12" ng-init="selectedPlaca={{manifiestoCA.placa.id}}" ng-model="selectedPlaca" ng-options="item.id as item.codigo for item in placaList" > 
+		      	    </select>
+
+        	        <input class="span12" type="submit" value="Guardar" />
+                </form>
+            </div>
+        </div>
+
+      
+    </div>
+   
+</body>
